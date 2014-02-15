@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D08C8FE718AF87D9008B347B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08C8FE618AF87D9008B347B /* Foundation.framework */; };
+		D08C8FE918AF87D9008B347B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08C8FE818AF87D9008B347B /* CoreGraphics.framework */; };
+		D08C8FEB18AF87D9008B347B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08C8FEA18AF87D9008B347B /* UIKit.framework */; };
+		D08C8FF118AF87D9008B347B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D08C8FEF18AF87D9008B347B /* InfoPlist.strings */; };
+		D08C8FF318AF87D9008B347B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D08C8FF218AF87D9008B347B /* main.m */; };
+		D08C8FF718AF87D9008B347B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D08C8FF618AF87D9008B347B /* AppDelegate.m */; };
+		D08C8FF918AF87D9008B347B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08C8FF818AF87D9008B347B /* Images.xcassets */; };
+		D08C900018AF87D9008B347B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08C8FFF18AF87D9008B347B /* XCTest.framework */; };
+		D08C900118AF87D9008B347B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08C8FE618AF87D9008B347B /* Foundation.framework */; };
+		D08C900218AF87D9008B347B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08C8FEA18AF87D9008B347B /* UIKit.framework */; };
+		D08C900A18AF87D9008B347B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D08C900818AF87D9008B347B /* InfoPlist.strings */; };
+		D08C900C18AF87D9008B347B /* FSPhotoBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D08C900B18AF87D9008B347B /* FSPhotoBrowserTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D08C900318AF87D9008B347B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D08C8FDB18AF87D9008B347B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D08C8FE218AF87D9008B347B;
+			remoteInfo = FSPhotoBrowser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D08C8FE318AF87D9008B347B /* FSPhotoBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSPhotoBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D08C8FE618AF87D9008B347B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D08C8FE818AF87D9008B347B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D08C8FEA18AF87D9008B347B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D08C8FEE18AF87D9008B347B /* FSPhotoBrowser-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FSPhotoBrowser-Info.plist"; sourceTree = "<group>"; };
+		D08C8FF018AF87D9008B347B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D08C8FF218AF87D9008B347B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D08C8FF418AF87D9008B347B /* FSPhotoBrowser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FSPhotoBrowser-Prefix.pch"; sourceTree = "<group>"; };
+		D08C8FF518AF87D9008B347B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D08C8FF618AF87D9008B347B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D08C8FF818AF87D9008B347B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D08C8FFE18AF87D9008B347B /* FSPhotoBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FSPhotoBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D08C8FFF18AF87D9008B347B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D08C900718AF87D9008B347B /* FSPhotoBrowserTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FSPhotoBrowserTests-Info.plist"; sourceTree = "<group>"; };
+		D08C900918AF87D9008B347B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D08C900B18AF87D9008B347B /* FSPhotoBrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSPhotoBrowserTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D08C8FE018AF87D9008B347B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D08C8FE918AF87D9008B347B /* CoreGraphics.framework in Frameworks */,
+				D08C8FEB18AF87D9008B347B /* UIKit.framework in Frameworks */,
+				D08C8FE718AF87D9008B347B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D08C8FFB18AF87D9008B347B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D08C900018AF87D9008B347B /* XCTest.framework in Frameworks */,
+				D08C900218AF87D9008B347B /* UIKit.framework in Frameworks */,
+				D08C900118AF87D9008B347B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D08C8FDA18AF87D9008B347B = {
+			isa = PBXGroup;
+			children = (
+				D08C8FEC18AF87D9008B347B /* FSPhotoBrowser */,
+				D08C900518AF87D9008B347B /* FSPhotoBrowserTests */,
+				D08C8FE518AF87D9008B347B /* Frameworks */,
+				D08C8FE418AF87D9008B347B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D08C8FE418AF87D9008B347B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D08C8FE318AF87D9008B347B /* FSPhotoBrowser.app */,
+				D08C8FFE18AF87D9008B347B /* FSPhotoBrowserTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D08C8FE518AF87D9008B347B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D08C8FE618AF87D9008B347B /* Foundation.framework */,
+				D08C8FE818AF87D9008B347B /* CoreGraphics.framework */,
+				D08C8FEA18AF87D9008B347B /* UIKit.framework */,
+				D08C8FFF18AF87D9008B347B /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D08C8FEC18AF87D9008B347B /* FSPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				D08C8FF518AF87D9008B347B /* AppDelegate.h */,
+				D08C8FF618AF87D9008B347B /* AppDelegate.m */,
+				D08C8FF818AF87D9008B347B /* Images.xcassets */,
+				D08C8FED18AF87D9008B347B /* Supporting Files */,
+			);
+			path = FSPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		D08C8FED18AF87D9008B347B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D08C8FEE18AF87D9008B347B /* FSPhotoBrowser-Info.plist */,
+				D08C8FEF18AF87D9008B347B /* InfoPlist.strings */,
+				D08C8FF218AF87D9008B347B /* main.m */,
+				D08C8FF418AF87D9008B347B /* FSPhotoBrowser-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D08C900518AF87D9008B347B /* FSPhotoBrowserTests */ = {
+			isa = PBXGroup;
+			children = (
+				D08C900B18AF87D9008B347B /* FSPhotoBrowserTests.m */,
+				D08C900618AF87D9008B347B /* Supporting Files */,
+			);
+			path = FSPhotoBrowserTests;
+			sourceTree = "<group>";
+		};
+		D08C900618AF87D9008B347B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D08C900718AF87D9008B347B /* FSPhotoBrowserTests-Info.plist */,
+				D08C900818AF87D9008B347B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D08C8FE218AF87D9008B347B /* FSPhotoBrowser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D08C900F18AF87D9008B347B /* Build configuration list for PBXNativeTarget "FSPhotoBrowser" */;
+			buildPhases = (
+				D08C8FDF18AF87D9008B347B /* Sources */,
+				D08C8FE018AF87D9008B347B /* Frameworks */,
+				D08C8FE118AF87D9008B347B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FSPhotoBrowser;
+			productName = FSPhotoBrowser;
+			productReference = D08C8FE318AF87D9008B347B /* FSPhotoBrowser.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D08C8FFD18AF87D9008B347B /* FSPhotoBrowserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D08C901218AF87D9008B347B /* Build configuration list for PBXNativeTarget "FSPhotoBrowserTests" */;
+			buildPhases = (
+				D08C8FFA18AF87D9008B347B /* Sources */,
+				D08C8FFB18AF87D9008B347B /* Frameworks */,
+				D08C8FFC18AF87D9008B347B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D08C900418AF87D9008B347B /* PBXTargetDependency */,
+			);
+			name = FSPhotoBrowserTests;
+			productName = FSPhotoBrowserTests;
+			productReference = D08C8FFE18AF87D9008B347B /* FSPhotoBrowserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D08C8FDB18AF87D9008B347B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Fanyi Network techonology Co.,Ltd";
+				TargetAttributes = {
+					D08C8FFD18AF87D9008B347B = {
+						TestTargetID = D08C8FE218AF87D9008B347B;
+					};
+				};
+			};
+			buildConfigurationList = D08C8FDE18AF87D9008B347B /* Build configuration list for PBXProject "FSPhotoBrowser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D08C8FDA18AF87D9008B347B;
+			productRefGroup = D08C8FE418AF87D9008B347B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D08C8FE218AF87D9008B347B /* FSPhotoBrowser */,
+				D08C8FFD18AF87D9008B347B /* FSPhotoBrowserTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D08C8FE118AF87D9008B347B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D08C8FF118AF87D9008B347B /* InfoPlist.strings in Resources */,
+				D08C8FF918AF87D9008B347B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D08C8FFC18AF87D9008B347B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D08C900A18AF87D9008B347B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D08C8FDF18AF87D9008B347B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D08C8FF718AF87D9008B347B /* AppDelegate.m in Sources */,
+				D08C8FF318AF87D9008B347B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D08C8FFA18AF87D9008B347B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D08C900C18AF87D9008B347B /* FSPhotoBrowserTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D08C900418AF87D9008B347B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D08C8FE218AF87D9008B347B /* FSPhotoBrowser */;
+			targetProxy = D08C900318AF87D9008B347B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D08C8FEF18AF87D9008B347B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D08C8FF018AF87D9008B347B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D08C900818AF87D9008B347B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D08C900918AF87D9008B347B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D08C900D18AF87D9008B347B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D08C900E18AF87D9008B347B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D08C901018AF87D9008B347B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FSPhotoBrowser/FSPhotoBrowser-Prefix.pch";
+				INFOPLIST_FILE = "FSPhotoBrowser/FSPhotoBrowser-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D08C901118AF87D9008B347B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FSPhotoBrowser/FSPhotoBrowser-Prefix.pch";
+				INFOPLIST_FILE = "FSPhotoBrowser/FSPhotoBrowser-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D08C901318AF87D9008B347B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FSPhotoBrowser.app/FSPhotoBrowser";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FSPhotoBrowser/FSPhotoBrowser-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FSPhotoBrowserTests/FSPhotoBrowserTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D08C901418AF87D9008B347B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FSPhotoBrowser.app/FSPhotoBrowser";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FSPhotoBrowser/FSPhotoBrowser-Prefix.pch";
+				INFOPLIST_FILE = "FSPhotoBrowserTests/FSPhotoBrowserTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D08C8FDE18AF87D9008B347B /* Build configuration list for PBXProject "FSPhotoBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D08C900D18AF87D9008B347B /* Debug */,
+				D08C900E18AF87D9008B347B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D08C900F18AF87D9008B347B /* Build configuration list for PBXNativeTarget "FSPhotoBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D08C901018AF87D9008B347B /* Debug */,
+				D08C901118AF87D9008B347B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D08C901218AF87D9008B347B /* Build configuration list for PBXNativeTarget "FSPhotoBrowserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D08C901318AF87D9008B347B /* Debug */,
+				D08C901418AF87D9008B347B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D08C8FDB18AF87D9008B347B /* Project object */;
+}
