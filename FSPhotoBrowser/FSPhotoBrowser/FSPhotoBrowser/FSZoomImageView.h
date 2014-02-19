@@ -13,7 +13,7 @@
 
 @class ZoomScrollView;
 
-typedef void (^CTZoomScrollZoomStateBlock) (BOOL normalState);
+typedef void (^ScrollZoomStateBlock) (BOOL normalState);
 
 @interface FSZoomImageView : UIView
 {
@@ -26,24 +26,23 @@ typedef void (^CTZoomScrollZoomStateBlock) (BOOL normalState);
 
 @property (nonatomic, readonly, strong) UIImageView *imageView;
 @property (nonatomic, copy) dispatch_block_t didTapBlock;   //  did tap callback block
-@property (nonatomic, copy) CTZoomScrollZoomStateBlock zoomStateBlock;
+@property (nonatomic, copy) ScrollZoomStateBlock zoomStateBlock;    //  double click the scrollview will call this function.
 
 //  recovery scrollview zoom scale
 - (void)recoveryZoomScale;
 
-//  本地图片，在 CTInfiniteScrollImageView 获得图片以后，直接设置，但是在本类需要更新 zoomScale 大小
-- (void)setZoomImage:(UIImage *)image;
-
 /**
- *
+ *  @description
+ *      Set the imageView 'image' with a 'url'.
+ *  @params
+ *      url     the image's url.
  */
 - (void)setImageWithUrl:(NSString *)url;
 
-//  UI 效果需要改为加载图片时菊花转，类外调用此方法，转动菊花，图片加载失败或者完成后菊花消失
-- (void)startRotateIndicator;
-
 @end
 
+#pragma mark -
+#pragma mark - ZoomScrollView
 
 @interface ZoomScrollView : UIScrollView
 {

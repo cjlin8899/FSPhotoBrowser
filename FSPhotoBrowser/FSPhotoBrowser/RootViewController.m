@@ -46,7 +46,13 @@
                   @"http://img1.cache.netease.com/sports/2014/2/18/201402180902059c165.jpg",
                   @"http://img3.cache.netease.com/sports/2014/2/17/20140217075444348e5.jpg",
                   @"http://img3.cache.netease.com/sports/2014/2/16/20140216081941b2406.jpg",
-                  @"http://img1.cache.netease.com/sports/2014/2/15/20140215091002fa47f.jpg", nil];
+                  @"http://img1.cache.netease.com/sports/2014/2/15/20140215091002fa47f.jpg",
+                      @"http://pic1.sc.chinaz.com/files/pic/pic9/201402/apic214.jpg",
+                      @"http://pic2.sc.chinaz.com/files/pic/pic9/201402/apic226.jpg",
+                      @"http://pic1.sc.chinaz.com/files/pic/pic9/201402/apic307.jpg",
+                      @"http://pic2.sc.chinaz.com/files/pic/pic9/201402/apic128.jpg",
+                      @"http://pic1.sc.chinaz.com/files/pic/pic9/201401/apic134.jpg",
+                      @"http://pic1.sc.chinaz.com/files/pic/pic9/201401/apic3255.jpg", nil];
 }
 
 - (void)buttonClick
@@ -68,8 +74,8 @@
     [view setDelegate:self];
     [view setNumberOfImages:[_dataArray count] andCurrentImageIndex:0];
     __block typeof(FSPhotoBrowser *) __weak browser = view;
-    [view setDidTapBlock:^() {
-        [browser willRemoveInfiniteView];
+    [view setTapBlock:^() {
+        [browser willRemovePhotoBrowser];
     }];
     [[[[UIApplication sharedApplication] delegate] window] addSubview:view];
 }

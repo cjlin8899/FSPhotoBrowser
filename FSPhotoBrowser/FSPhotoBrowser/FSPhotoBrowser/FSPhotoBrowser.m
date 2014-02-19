@@ -9,6 +9,7 @@
 //@class InfiniteScrollBottomView;
 
 #define FS_PHOTO_BROWSER_SCROLL_IMAGE_VIEW_MAX_ZOOM_IMAGES 4
+#define FS_PHOTO_BROWSER_SCROLL_BACKGROUND_COLOR_WITH_ALPHA(a) [UIColor colorWithRed:36/255.0f green:36/255.0f blue:36/255.0f alpha:a]
 
 #import "FSPhotoBrowser.h"
 #import "FSZoomImageView.h"
@@ -17,17 +18,10 @@
 {
     CGFloat _selfViewWidth;
     NSInteger _lastLocation;
-    UIButton *backBtn;
-    UIButton *_likeButton;
-    UIImageView *_likeIcon;
-    UILabel *_likeLB;
-    NSInteger _clickLikeImageIndex;  //  记录点击了哪一个图片的喜欢按钮
 }
 
 @property (nonatomic, strong) NSMutableArray *zoomImageViews;
 @property (nonatomic, strong) UIScrollView *infiniteScroll;
-//@property (nonatomic, strong) InfiniteScrollBottomView *bottomView;
-@property (nonatomic, strong) UIImageView *likeIcon;
 
 @end
 
@@ -38,6 +32,9 @@
 
 - (void)dealloc
 {
+    self.infiniteScroll = nil;
+    self.zoomImageViews = nil;
+
     NSLog(@"FSPhotoBrowser dealloc");
 }
 
@@ -59,7 +56,7 @@
         FSZoomImageView *zoomView = [_zoomImageViews objectAtIndex:index];
         CGRect rect = [zoomView.imageView frame];
         [zoomView.imageView setFrame:CGRectMake(CGRectGetWidth([self bounds]) / 2 - 10, CGRectGetHeight([self bounds]) / 2 - 10, 20.0f, 20.0f)];
-        [zoomView.imageView setBackgroundColor:[UIColor colorWithRed:36/255.0f green:36/255.0f blue:36/255.0f alpha:1]];
+        [zoomView.imageView setBackgroundColor:FS_PHOTO_BROWSER_SCROLL_BACKGROUND_COLOR_WITH_ALPHA(1)];
         [zoomView.imageView setAlpha:0.0f];
         
         [UIView beginAnimations:nil context:NULL];
@@ -73,7 +70,7 @@
         [UIView beginAnimations:nil context:NULL];
         [UIView setAnimationCurve:UIViewAnimationCurveLinear];
         [UIView setAnimationDuration:0.15f];
-        [self setBackgroundColor:[UIColor colorWithRed:36/255.0f green:36/255.0f blue:36/255.0f alpha:1]];
+        [self setBackgroundColor:FS_PHOTO_BROWSER_SCROLL_BACKGROUND_COLOR_WITH_ALPHA(1)];
         [UIView commitAnimations];
 
         _photoFlags.didMoveToWindow = YES;
@@ -85,8 +82,6 @@
 
 - (void)setupSelfView
 {
-    _photoFlags.animationStop = YES;
-
     CGRect rect = [self bounds];
     rect.size.width += FS_ZOOM_IMAGE_SCROLL_VIEW_GAP_WIDTH;
     _infiniteScroll = [[UIScrollView alloc] initWithFrame:rect];
@@ -111,9 +106,6 @@
         __block typeof(self) __weak myself = self;
         [zoomImage setZoomStateBlock:^(BOOL normalState) {
             [myself zoomImageViewNormal:normalState];
-        }];
-        [zoomImage setDidTapBlock:^() {
-//            [myself zoomImageDidTap];
         }];
     }
 }
@@ -207,6 +199,9 @@
 - (void)recoveryZoomScaleWithLocation:(NSInteger)location
 {
     NSInteger index = location % FS_PHOTO_BROWSER_SCROLL_IMAGE_VIEW_MAX_ZOOM_IMAGES;
+    if (index >= [_zoomImageViews count]) {
+        return;
+    }
     FSZoomImageView *zoomView = [_zoomImageViews objectAtIndex:index];
     [zoomView recoveryZoomScale];
 }
@@ -238,7 +233,6 @@
     } else if (currentIndex > _numberOfImages) {
         current = _numberOfImages - 1;
     }
-    //  TODO:   需要先调用 setContentOffset: 方法，否则有时候出现错位，原因是先绘制好了位置，然后 setContentOffset: 会调用 scrollview 的代理方法，这样导致重新绘制位置，这里需要改善.
     [_infiniteScroll setContentOffset:CGPointMake(current * _selfViewWidth, 0.0f)];
     _currentImageIndex = current;
     _lastLocation = current;
@@ -251,29 +245,23 @@
     if (_delegate && [_delegate respondsToSelector:@selector(photoBrowser:currentPhotoIndex:)]) {
         [_delegate photoBrowser:self currentPhotoIndex:current];
     }
-    //  TODO:   需要优化
-//    __block typeof(self) __unsafe_unretained myself = self;
-//    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25f * NSEC_PER_SEC));
-//    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-//        [myself resetBottomViewDataAtIndex:_currentImageIndex];
-//    });
 }
 
-- (void)setDidTapBlock:(dispatch_block_t)didTapBlock
+- (void)setTapBlock:(dispatch_block_t)tapBlock
 {
-    if (_didTapBlock == didTapBlock) {
+    if (_tapBlock == tapBlock) {
         return;
     }
-    _didTapBlock = didTapBlock;
+    _tapBlock = tapBlock;
 
     if ([_zoomImageViews count]) {
         for (FSZoomImageView *view in _zoomImageViews) {
-            [view setDidTapBlock:_didTapBlock];
+            [view setDidTapBlock:_tapBlock];
         }
     }
 }
 
-- (void)willRemoveInfiniteView
+- (void)willRemovePhotoBrowser
 {
     [UIView animateWithDuration:0.35f animations:^{
         [self setAlpha:0];
@@ -290,8 +278,8 @@
     CGPoint offset = [scrollView contentOffset];
     NSInteger location = offset.x / _selfViewWidth;
 
-    if (_photoFlags.bottomViewHidden && location < _lastLocation) {
-        //  表示已经放大图片
+    if (_photoFlags.scrollviewExpand && location < _lastLocation) {
+        //  scroll view is expand state
         CGFloat origin = location * _selfViewWidth;
         if (offset.x - origin > 10.0f) {
             return;
@@ -314,14 +302,11 @@
     CGPoint offset = [scrollView contentOffset];
     NSInteger location = offset.x / _selfViewWidth;
 
-    if (_photoFlags.bottomViewHidden && location != _lastLocation) {
+    if (_photoFlags.scrollviewExpand && location != _lastLocation) {
         [self recoveryZoomScaleWithLocation:_lastLocation];
     }
 
     _currentImageIndex = location;
-    if (_photoFlags.didBreathe) {
-//        [self stopBreathe:NO];
-    }
 }
 
 #pragma mark -
@@ -329,14 +314,14 @@
 
 - (void)zoomImageViewNormal:(BOOL)normal
 {
-    if (normal == !_photoFlags.bottomViewHidden) {
+    if (normal == !_photoFlags.scrollviewExpand) {
         return;
     }
 
-    if (normal && _photoFlags.bottomViewHidden) {
-        _photoFlags.bottomViewHidden = NO;
-    } else if (!normal && !_photoFlags.bottomViewHidden) {
-        _photoFlags.bottomViewHidden = YES;
+    if (normal && _photoFlags.scrollviewExpand) {
+        _photoFlags.scrollviewExpand = NO;
+    } else if (!normal && !_photoFlags.scrollviewExpand) {
+        _photoFlags.scrollviewExpand = YES;
     }
 }
 

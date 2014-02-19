@@ -143,12 +143,6 @@
     }];
 }
 
-- (void)setZoomImage:(UIImage *)image
-{
-    [_imageView setImage:image];
-    [self resetZoonScale];
-}
-
 - (void)startRotateIndicator
 {
     [_indicator startAnimating];
@@ -234,8 +228,8 @@
     [_indicator stopAnimating];
 }
 
-
 @end
+
 
 
 #pragma mark -
